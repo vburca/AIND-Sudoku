@@ -2,18 +2,28 @@
 ## Introductory Project: Diagonal Sudoku Solver
 
 # Question 1 (Naked Twins)
-Q: How do we use constraint propagation to solve the naked twins problem?  
-A: *Student should provide answer here*
+Q: How do we use constraint propagation to solve the naked twins problem?
+A: We define the naked twins strategy as finding two boxes that have the same
+2 possible values as their final solution. With this in mind, we know that
+these values can not be taken by any of the other boxes within the unit
+containing the naked twins boxes. Therefore, we apply this constraint to the
+rest of the boxes from the current unit, by removing the 2 values from their
+lists of possible values.
 
 # Question 2 (Diagonal Sudoku)
-Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
-A: *Student should provide answer here*
+Q: How do we use constraint propagation to solve the diagonal sudoku problem?
+A: Initially we defined the sudoku constraints only on columns, rows and the 3x3
+squares. The constraints (of having a digit appear only once in any of these
+individual units) were applied throughout our strategies. In order to use
+constraint propagation on a diagonal sudoku, we simply have to define a new type
+of unit, a diagonal unit, consisting of both the primary and secondary diagonals
+of the sudoky board.
 
 ### Install
 
 This project requires **Python 3**.
 
-We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project. 
+We recommend students install [Anaconda](https://www.continuum.io/downloads), a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
 Please try using the environment we provided in the Anaconda lesson of the Nanodegree.
 
 ##### Optional: Pygame
