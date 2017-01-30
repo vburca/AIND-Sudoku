@@ -13,8 +13,11 @@ row_units = [cross(r, cols) for r in rows]
 column_units = [cross(rows, c) for c in cols]
 square_units = [cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
 
+# Create the primary diagonal unit
 d1_unit = [r + c for r, c in list(zip(list(rows), list(cols)))]
+# Create the secondary diagonal unit
 d2_unit = [r + c for r, c in list(zip(list(reversed(rows)), list(cols)))]
+# Create the diagonal units, from both primary and secondary diagonals
 diagonal_units = [d1_unit, d2_unit]
 
 unitlist = row_units + column_units + square_units + diagonal_units
